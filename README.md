@@ -1,5 +1,5 @@
 
-### atlas cluster -> namespace oidc-test
+### cluster -> namespace oidc-test
 > How to apply remove and port forward from cluster
 
 ```
