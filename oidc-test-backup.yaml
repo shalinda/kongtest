@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    # kubectl.kubernetes.io/last-applied-configuration: |
+    #   {"apiVersion":"extensions/v1beta1","kind":"Ingress","metadata":{"annotations":{"plugins.konghq.com":"oidc-kong-test"},"name":"test-user-portal","namespace":"ump-test"},"spec":{"rules":[{"host":"test.userportal.nonprod.torq.trans.apps.ge.com","http":{"paths":[{"backend":{"serviceName":"ump-ui-svc","servicePort":80},"path":"/"},{"backend":{"serviceName":"user-manage-app-svc","servicePort":80},"path":"/api/v1"},{"backend":{"serviceName":"user-management-ldap-app-svc","servicePort":80},"path":"/api/v1/person"}]}}]}}
+    plugins.konghq.com: oidc-kong-test
+  # creationTimestamp: "2019-02-06T17:07:44Z"
+  generation: 1
+  name: test-user-portal
+  namespace: ump-test
+  # resourceVersion: "45065687"
+  # selfLink: /apis/extensions/v1beta1/namespaces/ump-test/ingresses/test-user-portal
+  # uid: b88c8323-2a31-11e9-9d83-0abcb74abb6e
+spec:
+  rules:
+  - host: test.userportal.nonprod.torq.trans.apps.ge.com
+    http:
+      paths:
+      - backend:
+          serviceName: ump-ui-svc
+          servicePort: 80
+        path: /
+      - backend:
+          serviceName: user-manage-app-svc
+          servicePort: 80
+        path: /api/v1
+      - backend:
+          serviceName: user-management-ldap-app-svc
+          servicePort: 80
+        path: /api/v1/person
+# status:
+#   loadBalancer:
+#     ingress:
+#     - hostname: internal-aa020a65a20ed11e9be4b0e42f78901b-1753290715.us-east-1.elb.amazonaws.com

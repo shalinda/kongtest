@@ -1,0 +1,63 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: oidc-kong-dev1
+plugin: openid-connect
+config:
+  auth_methods:
+  - password
+  - client_credentials
+  - authorization_code
+  - bearer
+  - introspection
+  - kong_oauth2
+  - refresh_token
+  - session
+  authorization_cookie_name: authorization
+  cache_introspection: true
+  cache_tokens: true
+  cache_user_info: true
+  client_arg: client_id
+  client_id:
+  - atlas
+  client_secret:
+  - 123456
+  consumer_by:
+  - username
+  - custom_id
+  end_session_endpoint: https://idp.ping.userportal.nonprod.torq.trans.apps.ge.com/idp/startSLO.ping
+  http_version: 1.1
+  id_token_param_type:
+  - query
+  - header
+  - body
+  issuer: https://idp.ping.userportal.nonprod.torq.trans.apps.ge.com/.well-known/openid-configuration
+  redirect_uri: https://oidctest1.atlas.nonprod.torq.trans.apps.ge.com
+  jwt_session_claim: sid
+  leeway: 0
+  login_action: upstream
+  login_methods:
+  - authorization_code
+  login_redirect_mode: fragment
+  login_tokens:
+  - id_token
+  logout_methods:
+  - POST
+  - DELETE
+  - GET
+  logout_revoke: true
+  logout_uri_suffix: _logout
+  response_mode: query
+  reverify: false
+  scopes:
+  - openid
+  session_cookie_name: session
+  session_cookie_lifetime: 1860
+  ssl_verify: false
+  timeout: 10000
+  upstream_access_token_header: authorization:bearer
+  upstream_user_info_header: x-userinfo
+  verify_claims: false
+  verify_nonce: false
+  verify_parameters: false
+  verify_signature: false

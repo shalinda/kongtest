@@ -1,0 +1,68 @@
+{
+            "config": {
+                "auth_methods": [
+                    "password",
+                    "client_credentials",
+                    "authorization_code",
+                    "bearer",
+                    "introspection",
+                    "kong_oauth2",
+                    "refresh_token",
+                    "session"
+                ],
+                "authorization_cookie_name": "authorization",
+                "cache_introspection": true,
+                "cache_tokens": true,
+                "cache_user_info": true,
+                "client_arg": "client_id",
+                "client_id": [
+                    "atlas"
+                ],
+                "client_secret": [
+                    "123456"
+                ],
+                "consumer_by": [
+                    "username",
+                    "custom_id"
+                ],
+                "http_version": 1.1,
+                "id_token_param_type": [
+                    "query",
+                    "header",
+                    "body"
+                ],
+                "issuer": "https://idp.ping.userportal.nonprod.torq.trans.apps.ge.com/.well-known/openid-configuration",
+                "jwt_session_claim": "sid",
+                "leeway": 0,
+                "login_action": "upstream",
+                "login_methods": [
+                    "authorization_code"
+                ],
+                "login_redirect_mode": "fragment",
+                "login_tokens": [
+                    "id_token"
+                ],
+                "logout_methods": [
+                    "POST",
+                    "DELETE"
+                ],
+                "logout_revoke": false,
+                "response_mode": "query",
+                "reverify": false,
+                "scopes": [
+                    "openid"
+                ],
+                "session_cookie_name": "session",
+                "ssl_verify": false,
+                "timeout": 10000,
+                "upstream_access_token_header": "authorization:bearer",
+                "upstream_user_info_header": "x-userinfo",
+                "verify_claims": false,
+                "verify_nonce": false,
+                "verify_parameters": false,
+                "verify_signature": false
+            },
+            "created_at": 1531504228000,
+            "enabled": true,
+            "name": "openid-connect"
+        }
